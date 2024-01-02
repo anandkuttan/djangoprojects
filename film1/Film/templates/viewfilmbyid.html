@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<center>
+    <h1>See Details</h1>
+</center>
+
+
+<center>
+    <h1>VIEW BOOK</h1>
+    <br></center>
+<table style="border-color:black" class="table table-bordered">
+  <tr>
+    <th>Film</th>
+    <td><img src="{{film.cover.url}}" style="height:300px;width:400px"></td>
+  </tr>
+  <tr>
+    <th>TITLE</th>
+    <td>{{film.name}}</td>
+  </tr>
+   <tr>
+    <th>Description</th>
+    <td>{{film.des}}</td>
+  </tr>
+    <tr>
+    <th>Year</th>
+    <td>{{film.year}}</td>
+  </tr>
+
+</table>
+
+
+
+
+
+{% endblock %}
+
+
+

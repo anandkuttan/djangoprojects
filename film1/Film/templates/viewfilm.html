@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<div class="container">
+    <div class="row">
+{% for i in film %}
+
+
+
+
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+  <img src="{{i.cover.url}}" class="card-img-top" alt="..." height="150px" width="100%">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.des}}</p>
+      <p class="card-text">{{i.year}}</p>
+    <a href="{% url 'movie:viewfilmbyid' i.id %}" class="btn btn-primary">See details</a>
+      <a href="{% url 'movie:deletefilmbyid' i.id %}" class="btn btn-primary">Delete</a><br><br>
+      <a href="{% url 'movie:editfilmbyid' i.id %}" class="btn btn-primary">Edit</a>
+  </div>
+</div>
+    </div>
+
+
+<br><br>
+{% endfor %}
+    </div></div>
+{% endblock %}
